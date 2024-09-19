@@ -4,8 +4,6 @@ import path from 'path';
 import argsParser from 'args-parser';
 import child_process from 'child_process';
 
-console.log(process.argv);
-
 const args = argsParser(process.argv);
 
 let envPath = path.resolve(process.cwd(), '.env');
@@ -45,8 +43,6 @@ if (process.argv.length >= 5) {
 } else if (process.argv.length = 4) {
     command = process.argv.slice(2).join(' ');
 }
-
-console.log(command);
 
 if (command) {
     child_process.execSync(command, { stdio: 'inherit' });
